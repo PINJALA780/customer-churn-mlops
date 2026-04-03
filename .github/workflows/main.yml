@@ -2,11 +2,11 @@ name: MLOps Pipeline
 
 on:
   push:
-    branches: [cicd]
+    branches: [main]
   workflow_dispatch:
 
 env:
-  AWS_REGION: us-east-1
+  AWS_REGION: ap-south-1
   S3_BUCKET: churn-model-bucket-cicd-venkat
 
 jobs:
