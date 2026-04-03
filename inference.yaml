@@ -1,0 +1,17 @@
+apiVersion: serving.kserve.io/v1beta1
+kind: InferenceService
+metadata:
+  name: churn-predictor
+  namespace: ml
+spec:
+  predictor:
+    serviceAccountName: sa-s3-access
+    sklearn:
+      storageUri: s3://customer-churn-model-venakt/models/churn_model.pkl
+      resources:
+        requests:
+          cpu: "100m"
+          memory: "256Mi"
+        limits:
+          cpu: "200m"
+          memory: "512Mi"
